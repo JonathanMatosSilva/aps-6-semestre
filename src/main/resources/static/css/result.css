@@ -1,0 +1,106 @@
+/* styles.css */
+
+/* Reseta margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    background-color: #f4f4f4; /* Cor de fundo */
+    color: #333; /* Cor do texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Preenchimento em torno do conteúdo */
+}
+
+h1 {
+    margin-bottom: 20px; /* Espaçamento abaixo do título */
+    color: #4CAF50; /* Cor do título */
+}
+
+img {
+    width: 400px; /* Define uma largura fixa para a imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    border: 2px solid #ccc; /* Borda da imagem */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin-bottom: 20px; /* Espaçamento abaixo da imagem */
+}
+
+h2 {
+    margin: 20px 0; /* Espaçamento acima e abaixo do subtítulo */
+    color: #333; /* Cor do subtítulo */
+}
+
+table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Remove espaços entre células */
+    margin-bottom: 20px; /* Espaçamento abaixo da tabela */
+}
+
+th, td {
+    border: 1px solid #ccc; /* Borda das células */
+    padding: 10px; /* Preenchimento interno das células */
+    text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+th {
+    background-color: #4CAF50; /* Cor de fundo do cabeçalho da tabela */
+    color: white; /* Cor do texto do cabeçalho */
+}
+
+td {
+    background-color: white; /* Cor de fundo das células */
+}
+
+td:nth-child(even) {
+    background-color: #f9f9f9; /* Cor de fundo alternada para linhas pares */
+}
+
+.button {
+    display: inline-block; /* Exibe o link como um bloco em linha */
+    background-color: #4CAF50; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    padding: 10px 15px; /* Preenchimento interno do botão */
+    border-radius: 4px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove o sublinhado do link */
+    font-size: 16px; /* Tamanho da fonte do botão */
+}
+
+.button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+}
+
+/* Estilos adicionais para a sobreposição de imagem expandida */
+.overlay {
+    position: fixed; /* Fixa a sobreposição na tela */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    display: flex; /* Usado para centralizar o conteúdo */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    z-index: 1000; /* Fica acima de outros elementos */
+}
+
+.overlay-image {
+    width: 100%; /* Define a largura da imagem expandida para 100% da tela */
+    height: 100%; /* Define a altura da imagem expandida para 100% da tela */
+    object-fit: contain; /* Mantém a proporção da imagem e a ajusta dentro da área */
+}
+
+.close {
+    position: absolute; /* Coloca o botão de fechar no canto */
+    top: 20px;
+    right: 30px;
+    color: white; /* Cor do texto do botão de fechar */
+    font-size: 30px; /* Tamanho da fonte */
+    font-weight: bold; /* Negrito */
+    cursor: pointer; /* Muda o cursor para indicar clicável */
+}

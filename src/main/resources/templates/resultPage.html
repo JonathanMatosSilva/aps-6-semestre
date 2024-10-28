@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Análise</title>
+    <link rel="stylesheet" type="text/css" href="/css/result.css"> <!-- Link para o CSS -->
+</head>
+<body>
+<h1>Imagem Processada</h1>
+
+<!-- Exibe a imagem processada -->
+<img id="processedImage" th:src="'data:image/jpeg;base64,' + ${imageBase64}" alt="Imagem Processada" style="max-width: 400px; height: auto; cursor: pointer;">
+
+<h2>Objetos Detectados</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Nome do Objeto</th>
+        <th>Confiança</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="obj : ${detectedObjects}">
+        <td th:text="${obj.name}"></td> <!-- Acessa o método getName() -->
+        <td th:text="${obj.formattedConfidence}"></td> <!-- Acessa o método getFormattedConfidence() -->
+    </tr>
+    </tbody>
+</table>
+
+<!-- Botão de ação para retornar à página inicial -->
+<a href="/image/upload" class="button">Retornar à Página Inicial</a>
+
+<!-- Div para a imagem expandida -->
+<div id="imageOverlay" class="overlay" style="display: none;">
+    <span class="close" onclick="closeOverlay()">&times;</span>
+    <img class="overlay-image" id="overlayImage" src="" alt="Imagem Expandida">
+</div>
+
+<script>
+    // Função para abrir a sobreposição com a imagem expandida
+    document.getElementById('processedImage').onclick = function() {
+        var overlay = document.getElementById('imageOverlay');
+        var overlayImage = document.getElementById('overlayImage');
+        overlayImage.src = this.src; // Define a fonte da imagem expandida
+        overlay.style.display = 'flex'; // Mostra a sobreposição
+    };
+
+    // Função para fechar a sobreposição
+    function closeOverlay() {
+        document.getElementById('imageOverlay').style.display = 'none'; // Oculta a sobreposição
+    }
+</script>
+
+</body>
+</html>

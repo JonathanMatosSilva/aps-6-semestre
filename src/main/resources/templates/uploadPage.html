@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload de Imagem</title>
+    <link rel="stylesheet" type="text/css" href="/css/upload.css"> <!-- Link para o CSS -->
+</head>
+<body>
+<h1>Envie uma Imagem para Análise</h1>
+<form action="/image/analyze" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="image">Selecione uma imagem:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+    </div>
+    <div>
+        <button type="submit">Analisar Imagem</button>
+    </div>
+</form>
+</body>
+</html>
